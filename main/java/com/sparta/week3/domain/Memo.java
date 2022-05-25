@@ -20,30 +20,30 @@ public class Memo extends Timestamped { // 생성,수정 시간을 자동으로 
     @Column(nullable = false)
     private String contents;
 
-    @Column(nullable = false)
-    private String password;
-
-    @Column(nullable = false)
-    private String title;
-
-    public Memo(String username, String contents, String password, String title) {
+//    @Column(nullable = false)
+//    private String password;
+//
+//    @Column(nullable = false)
+//    private String title;
+//String password, String title
+    public Memo(String username, String contents) {
         this.username = username;
         this.contents = contents;
-        this.password = password;
-        this.title = title;
+//        this.password = password;
+//        this.title = title;
     }
 
     public Memo(MemoRequestDto requestDto) {
         this.username = requestDto.getUsername();
         this.contents = requestDto.getContents();
-        this.password = requestDto.getPassword();
-        this.title = requestDto.getTitle();
+//        this.password = requestDto.getPassword();
+//        this.title = requestDto.getTitle();
     }
 
     public void update(MemoRequestDto requestDto) {
         this.username = requestDto.getUsername();
         this.contents = requestDto.getContents();
-        this.password = requestDto.getPassword();
-        this.title = requestDto.getTitle();
+//        this.password = requestDto.getPassword();
+//        this.title = requestDto.getTitle();
     }
 }
