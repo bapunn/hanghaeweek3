@@ -26,6 +26,12 @@ public class MemoController {
     public List<Memo> getMemos() {
         return memoRepository.findAllByOrderByCreatedAtDesc();
     }
+
+    @PutMapping("/api/memos/{id}")
+    public long updateMemo (@PathVariable Long id, @RequestBody MemoRequestDto requestDto) {
+        memoService.update(id,requestDto);
+        return id;
+    }
     @DeleteMapping("/api/memos/{id}")
     public Long deleteMemo(@PathVariable Long id) {
             memoRepository.deleteById(id);
